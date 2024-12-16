@@ -7,11 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SearchView
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.Visibility
 import com.example.medplus.MainActivity
 import com.example.medplus.R
+import com.example.medplus.adapters.BestsellerAdapter
 import com.example.medplus.databinding.BottomsheetDialogBinding
 import com.example.medplus.databinding.FragmentHomeBinding
+import com.example.medplus.interfaces.BestSellerInterface
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,22 +31,24 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), BestSellerInterface {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     var binding:FragmentHomeBinding?=null
     lateinit var mainActivity: MainActivity
+    var list = arrayListOf<String>()
+    lateinit var bestsellerAdapter: BestsellerAdapter
+    lateinit var linearLayoutManager: LinearLayoutManager
 //    initialized all the variables till this comment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainActivity = activity as MainActivity
-        arguments?.let {
+    mainActivity = activity as MainActivity
+    arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-    }
-
+}
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,27 +58,22 @@ class HomeFragment : Fragment() {
         return binding?.root
 //        return inflater.inflate(binding?.root, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-
-        binding?.tvLocation?.setOnClickListener {
-            val dialog = BottomSheetDialog(mainActivity)
-            val bottomSheetBinding = BottomsheetDialogBinding.inflate(layoutInflater)
-           bottomSheetBinding.idBtnDismiss.setOnClickListener {
-               Log.e("TAG", "dismiss: working", )
-               dialog.dismiss()
-            }
-            Log.e("TAG", "bottomsheet: working", )
-            dialog.apply {
-                setCancelable(true)
-                setContentView(bottomSheetBinding.root)
-                show()
-            }
-        }
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        list.add("23")
+        linearLayoutManager=LinearLayoutManager(mainActivity)
+        bestsellerAdapter=BestsellerAdapter(mainActivity,list,this)
+        binding?.bestSellerRecycler?.layoutManager=GridLayoutManager(mainActivity,4)
+        binding?.bestSellerRecycler?.adapter=bestsellerAdapter
     }
     companion object {
         /**
@@ -89,5 +93,11 @@ class HomeFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    override fun update(position: Int) {
+
+    }
+    override fun delete(position: Int) {
+
     }
 }

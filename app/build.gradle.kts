@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.viewpager2)
+    implementation (libs.material.v150)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
