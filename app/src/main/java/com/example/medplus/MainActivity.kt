@@ -7,19 +7,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.example.coordinate_layout.R
+import com.example.coordinate_layout.databinding.ActivityMainBinding
+import com.example.coordinate_layout.databinding.BottomsheetDialogBinding
 import com.example.medplus.adapters.MainViewPagerAdapter
-import com.example.medplus.databinding.ActivityMainBinding
-import com.example.medplus.databinding.BottomsheetDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
-    lateinit var binding:ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     lateinit var categoryAdapter:CategoryAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     private val tabTxt = arrayOf(

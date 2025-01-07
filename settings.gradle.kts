@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MedPlus"
+rootProject.name = "Coordinate Layout"
 include(":app")
  

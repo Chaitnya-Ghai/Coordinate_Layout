@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.medplus"
+    namespace = "com.example.coordinate_layout"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.medplus"
+        applicationId = "com.example.coordinate_layout"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 

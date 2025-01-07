@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coordinate_layout.R
 
 class CategoryAdapter (context: Context,var list:ArrayList<String>):RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
     class ViewHolder( var view: View):RecyclerView.ViewHolder(view) {
