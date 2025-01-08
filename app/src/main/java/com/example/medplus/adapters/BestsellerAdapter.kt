@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medplus.R
+import com.example.coordinate_layout.R
 import com.example.medplus.interfaces.BestSellerInterface
 
 class BestsellerAdapter(

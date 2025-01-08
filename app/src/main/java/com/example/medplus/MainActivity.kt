@@ -14,7 +14,6 @@ import com.example.coordinate_layout.databinding.ActivityMainBinding
 import com.example.coordinate_layout.databinding.BottomsheetDialogBinding
 import com.example.medplus.adapters.MainViewPagerAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -44,9 +43,7 @@ class MainActivity : AppCompatActivity() {
         binding.categoryRv.adapter=categoryAdapter
         list.add("s")
         list.add("l")
-        list.add("l")
-        list.add("l")
-        list.add("l")
+
 
         binding.mainViewPager.adapter=MainViewPagerAdapter(this)
 //        TabLayoutMediator(binding.mainTabLayout,binding.mainViewPager){ tab,position ->

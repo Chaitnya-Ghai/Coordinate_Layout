@@ -1,25 +1,16 @@
 package com.example.medplus.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.SearchView
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.transition.Visibility
+import com.example.coordinate_layout.databinding.FragmentHomeBinding
 import com.example.medplus.MainActivity
-import com.example.medplus.R
 import com.example.medplus.adapters.BestsellerAdapter
-import com.example.medplus.databinding.BottomsheetDialogBinding
-import com.example.medplus.databinding.FragmentHomeBinding
 import com.example.medplus.interfaces.BestSellerInterface
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +26,7 @@ class HomeFragment : Fragment(), BestSellerInterface {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    var binding:FragmentHomeBinding?=null
+    var binding: FragmentHomeBinding?=null
     lateinit var mainActivity: MainActivity
     var list = arrayListOf<String>()
     lateinit var bestsellerAdapter: BestsellerAdapter
